@@ -6,14 +6,14 @@
 
 import streamlit as st
 from PIL import Image
-image1 = Image.open('nyc1.jfif')
-image2 = Image.open('nyc2.jfif')
-image3 = Image.open('nyc3.jfif')
-image4 = Image.open('nyc4.png')
-image5 = Image.open('nyc5.png')
-image6 = Image.open('nyc6.png')
-image7 = Image.open('nyc7.png')
-graph = Image.open('nycgraph1.png')
+image1 = Image.open('images/nyc1.jfif')
+image2 = Image.open('images/nyc2.jfif')
+image3 = Image.open('images/nyc3.jfif')
+image4 = Image.open('images/nyc4.png')
+image5 = Image.open('images/nyc5.png')
+image6 = Image.open('images/nyc6.png')
+image7 = Image.open('images/nyc7.png')
+graph = Image.open('images/nycgraph1.png')
 
 image_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
