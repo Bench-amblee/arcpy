@@ -113,10 +113,11 @@ def all_together(df, name):
         colors=['#01FFF8','#909494','#0EF716']
         labels=['Water', 'Concrete', 'Green Cover']
         sizes = hist[1:]
-        plt.pie(sizes,autopct='%1.1f%%',colors=colors,shadow=True)
-        plt.title('Landcover of '+ str(name))
-        plt.legend(labels,loc = 'right',bbox_to_anchor=(1.45, 0.75), ncol=1)
-        plt.show()
+        fig, ax = plt.subplots()
+        ax.pie(sizes,autopct='%1.1f%%',colors=colors,shadow=True)
+        ax.title('Landcover of '+ str(name))
+        ax.legend(labels,loc = 'right',bbox_to_anchor=(1.45, 0.75), ncol=1)
+        st.pyplot(fig)
     pie_chart(hist, name)
     return masked
 
