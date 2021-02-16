@@ -119,6 +119,7 @@ def all_together(df, name):
         plt.legend(labels,loc = 'right',bbox_to_anchor=(1.45, 0.75), ncol=1)
         st.pyplot(fig)
     pie_chart(hist, name)
+    masked.format = 'png'
     st.image(masked)
 
 all_together(bk_df,'Brooklyn')
