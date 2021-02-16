@@ -53,6 +53,8 @@ show_image(view)
 
 # boroughs
 
+landsat_item = gis.content.search('title:Multispectral Landsat', 'Imagery Layer', outside_org=True)[0]
+landsat = landsat_item.layers[0]
 area = geocode("New York City", out_sr=landsat.properties.spatialReference)[0]
 landsat.extent = area['extent']
 selected = landsat.filter_by(where="(Category = 1) AND (cloudcover <=0.05)",
