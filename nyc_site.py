@@ -33,6 +33,10 @@ image_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': 
 
 
 st.title('New York City Landcover Analysis')
+side = st.sidebar.selectbox(
+    'Select a Borough',
+    ('Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
+)
 view = st.select_slider('Select a  view of the city',
                          options=['Satellite', 'NDVI Filter', 'City Boundary Cutout',
                                   'Water', 'Concrete', 'Greenery', 'Final'])
@@ -80,6 +84,7 @@ m_df = nh_df.loc[nh_df['NAME'] == 'New York']
 tb_df = nh_df.loc[nh_df['NAME'] == 'Bronx']
 #Queens
 q_df = nh_df.loc[nh_df['NAME'] == 'Queens']
+@st.cache
 def all_together(df, name):
 
     def land_clip(df):
