@@ -131,4 +131,4 @@ def all_together(df, name):
         st.pyplot(fig)
     pie_chart(hist, name)
    
-all_together(bk_df,'Brooklyn')
+#all_together(bk_df,'Brooklyn')
