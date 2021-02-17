@@ -26,13 +26,33 @@ image6 = Image.open('images/nyc6.png')
 image7 = Image.open('images/nyc7.png')
 graph = Image.open('images/nycgraph1.png')
 
+bimage1 = Image.open('images/brooklyn_chart.png')
+bimage2 = Image.open('images/brooklyn_map.png')
+bimage3 = Image.open('images/brooklyn_masked.jfif')
+mimage1 = Image.open('images/manhattan_chart.png')
+mimage2 = Image.open('images/manhattan_map.png')
+mimage3 = Image.open('images/manhattan_masked.jfif')
+qimage1 = Image.open('images/queens_chart.png')
+qimage2 = Image.open('images/queens_map.png')
+qimage3 = Image.open('images/queens_masked.jfif')
+simage1 = Image.open('images/staten_island_chart.png')
+simage2 = Image.open('images/staten_island_map.png')
+simage3 = Image.open('images/staten_island_masked.jfif')
+timage1 = Image.open('images/the_bronx_chart.png')
+timage2 = Image.open('images/the_bronx_map.png')
+timage3 = Image.open('images/the_bronx_masked.jfif')
+
 full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
-brooklyn_dict = {}
-queens_dict = {}
-manhattan_dict = {}
-the_bronx_dict = {}
-staten_island_dict = {}
+
+City = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
+              'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
+Brooklyn = {'Chart':bimage1,'Map':bimage2,'Masked':bimage3}
+Queens = {'Chart':qimage1,'Map':qimage2,'Masked':qimage3}
+Manhattan = {'Chart':mimage1,'Map':mimage2,'Masked':mimage3}
+Staten = {'Chart':simage1,'Map':simage2,'Masked':simage3}
+Bronx = {'Chart':timage1,'Map':timage2,'Masked':timage3}
+selection = {'Full City': City, 'Brooklyn': Brooklyn, 'Queens': Queens, 'Manhattan': Manhattan, 'The Bronx': Bronx, 'Staten Island': Staten}
 
 
 # In[7]:
@@ -43,11 +63,9 @@ side = st.sidebar.selectbox(
     'Select a View',
     ('Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
-view = st.select_slider('Select a  view of the city',
-                         options=['Satellite', 'NDVI Filter', 'City Boundary Cutout',
-                                  'Water', 'Concrete', 'Greenery', 'Final'])
+view = st.slider('Select a View', 0, 7, 0)
 
-def show_image(choice):
+hmm = '''def show_image(choice):
     if choice in full_city_dict.keys():
         st.image(full_city_dict[choice])
         st.subheader(choice)
@@ -60,7 +78,26 @@ def show_image(choice):
         if choice == 'Final':
             st.image(graph)
 show_image(view)
-
+'''
+def view_select(choice):
+    if choice in views.keys():
+        global images
+        images = selection(choice)
+        
+    def show_image(images):
+    
+        st.image(images[view])
+        st.subheader(images.keys())
+        if choice == 'Water':
+            st.write('Water Cover Percentage: 36.3%')
+        if choice == 'Greenery':
+            st.write('Greenery Cover Percentage: 15.1%')
+        if choice == 'Concrete':
+            st.write('Concrete and Building Cover Percentage: 48.6%')
+        if choice == 'Final':
+            st.image(graph)
+            
+view_select(side)
 # boroughs
 
 landsat_item = gis.content.search('title:Multispectral Landsat', 'Imagery Layer', outside_org=True)[0]
