@@ -90,7 +90,6 @@ m_df = nh_df.loc[nh_df['NAME'] == 'New York']
 tb_df = nh_df.loc[nh_df['NAME'] == 'Bronx']
 #Queens
 q_df = nh_df.loc[nh_df['NAME'] == 'Queens']
-@st.cache
 def all_together(df, name):
 
     def land_clip(df):
