@@ -38,6 +38,7 @@ def home_page(x,y):
   if x == '-----' or y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
   else:
+    x = Brooklyn
     st.write(x[0])
   
 home_page(side,side2)
