@@ -80,7 +80,7 @@ hmm = '''def show_image(choice):
 show_image(view)
 '''
 def view_select(choice):
-    if choice in view.keys():
+    if choice in selection.keys():
         global images
         images = selection(choice)
         
