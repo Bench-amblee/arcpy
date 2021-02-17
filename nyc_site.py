@@ -60,9 +60,15 @@ selection = {'Full City': City, 'Brooklyn': Brooklyn, 'Queens': Queens, 'Manhatt
 
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
-    'Select a View',
+    'Select a Location',
     ('Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
+side2 = st.sidebar.selection(
+  'Select a View',
+  ('Satellite','NDVI filter','Water','Buildings','Greenery','Full')
+)
+
+                             
 view = st.slider('Select a View', 0, 7, 0)
 
 hmm = '''def show_image(choice):
