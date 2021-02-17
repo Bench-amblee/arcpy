@@ -26,24 +26,32 @@ image6 = Image.open('images/nyc6.png')
 image7 = Image.open('images/nyc7.png')
 graph = Image.open('images/nycgraph1.png')
 
-image_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
+full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
+brooklyn_dict = {}
+queens_dict = {}
+manhattan_dict = {}
+the_bronx_dict = {}
+staten_island_dict = {}
+
 
 # In[7]:
 
 
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
-    'Select a Borough',
-    ('Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
+    'Select a View',
+    ('Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
+def view_select(choice):
+  if choice in 
 view = st.select_slider('Select a  view of the city',
                          options=['Satellite', 'NDVI Filter', 'City Boundary Cutout',
                                   'Water', 'Concrete', 'Greenery', 'Final'])
 
 def show_image(choice):
-    if choice in image_dict.keys():
-        st.image(image_dict[choice])
+    if choice in full_city_dict.keys():
+        st.image(full_city_dict[choice])
         st.subheader(choice)
         if choice == 'Water':
             st.write('Water Cover Percentage: 36.3%')
