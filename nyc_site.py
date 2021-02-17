@@ -84,9 +84,9 @@ def view_select(choice):
         global images
         images = selection.get(choice)
         
-def show_image(images):
-    st.image(images[view])
-    st.subheader(images.keys())
+def show_image(choice):
+    st.image(choice[view])
+    st.subheader(choice.keys())
     if choice == 'Water':
       st.write('Water Cover Percentage: 36.3%')
     if choice == 'Greenery':
