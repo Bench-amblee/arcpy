@@ -38,6 +38,7 @@ def home_page(x,y):
   if x == '-----' and y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
   
+home_page(side,side2)
                              
 view = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
 
