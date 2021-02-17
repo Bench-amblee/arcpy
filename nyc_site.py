@@ -43,8 +43,6 @@ side = st.sidebar.selectbox(
     'Select a View',
     ('Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
-def view_select(choice):
-  if choice in 
 view = st.select_slider('Select a  view of the city',
                          options=['Satellite', 'NDVI Filter', 'City Boundary Cutout',
                                   'Water', 'Concrete', 'Greenery', 'Final'])
