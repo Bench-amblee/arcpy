@@ -22,7 +22,7 @@ full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutou
 City = {0: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
 
-# Front End
+Brooklyn = [1,2,3]
 
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
@@ -35,8 +35,10 @@ side2 = st.sidebar.selectbox(
   
 )
 def home_page(x,y):
-  if x == '-----' and y == '-----':
+  if x == '-----' or y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
+  else:
+    st.write(x[0])
   
 home_page(side,side2)
                              
