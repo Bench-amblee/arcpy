@@ -22,8 +22,6 @@ full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutou
 City = {0: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
 
-selection = {'Full City': City, 'Brooklyn': Brooklyn, 'Queens': Queens, 'Manhattan': Manhattan, 'The Bronx': Bronx, 'Staten Island': Staten}
-
 # Front End
 
 st.title('New York City Landcover Analysis')
