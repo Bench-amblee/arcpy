@@ -82,7 +82,7 @@ show_image(view)
 def view_select(choice):
     if choice in selection.keys():
         global images
-        images = selection(choice)
+        images = selection.get(choice)
         
     def show_image(images):
     
