@@ -69,7 +69,7 @@ side2 = st.sidebar.selectbox(
 )
 
                              
-view = st.select_slider('Year', 1975, 1988, 1999, 2010, 2015, 2020)
+view = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
 
 hmm = '''def show_image(choice):
     if choice in full_city_dict.keys():
