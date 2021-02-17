@@ -45,9 +45,9 @@ timage3 = Image.open('images/the_bronx_masked.jfif')
 full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
 
-City = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
+City = {1: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
-Brooklyn = {'Chart':bimage1,'Map':bimage2,'Masked':bimage3}
+Brooklyn = {1:bimage1,'Map':bimage2,'Masked':bimage3}
 Queens = {'Chart':qimage1,'Map':qimage2,'Masked':qimage3}
 Manhattan = {'Chart':mimage1,'Map':mimage2,'Masked':mimage3}
 Staten = {'Chart':simage1,'Map':simage2,'Masked':simage3}
@@ -84,20 +84,20 @@ def view_select(choice):
         global images
         images = selection.get(choice)
         
-    def show_image(images):
-    
-        st.image(images[view])
-        st.subheader(images.keys())
-        if choice == 'Water':
-            st.write('Water Cover Percentage: 36.3%')
-        if choice == 'Greenery':
-            st.write('Greenery Cover Percentage: 15.1%')
-        if choice == 'Concrete':
-            st.write('Concrete and Building Cover Percentage: 48.6%')
-        if choice == 'Final':
-            st.image(graph)
+def show_image(images):
+    st.image(images[view])
+    st.subheader(images.keys())
+    if choice == 'Water':
+      st.write('Water Cover Percentage: 36.3%')
+    if choice == 'Greenery':
+      st.write('Greenery Cover Percentage: 15.1%')
+    if choice == 'Concrete':
+      st.write('Concrete and Building Cover Percentage: 48.6%')
+    if choice == 'Final':
+      st.image(graph)
             
 view_select(side)
+show_image(images)
 # boroughs
 
 landsat_item = gis.content.search('title:Multispectral Landsat', 'Imagery Layer', outside_org=True)[0]
