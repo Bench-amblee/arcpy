@@ -45,9 +45,9 @@ timage3 = Image.open('images/the_bronx_masked.jfif')
 full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
 
-City = {1: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
+City = {0: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
-Brooklyn = {1:bimage1,'Map':bimage2,'Masked':bimage3}
+Brooklyn = {0:bimage1,'Map':bimage2,'Masked':bimage3}
 Queens = {'Chart':qimage1,'Map':qimage2,'Masked':qimage3}
 Manhattan = {'Chart':mimage1,'Map':mimage2,'Masked':mimage3}
 Staten = {'Chart':simage1,'Map':simage2,'Masked':simage3}
