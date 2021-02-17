@@ -34,8 +34,8 @@ side2 = st.sidebar.selectbox(
   ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
   
 )
-def home_page():
-  if side == '-----' and side2 == '-----':
+def home_page(x,y):
+  if x == '-----' and y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
   
                              
@@ -61,7 +61,7 @@ def view_select(choice):
         global images
         images = selection.get(choice)
         
-view_select()
+view_select(side,side2)
         
 def show_image(choice):
     st.image(choice[view])
