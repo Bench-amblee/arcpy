@@ -63,7 +63,7 @@ side = st.sidebar.selectbox(
     'Select a Location',
     ('Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
-side2 = st.sidebar.selection(
+side2 = st.sidebar.selectbox(
   'Select a View',
   ('Satellite','NDVI filter','Water','Buildings','Greenery','Full')
 )
