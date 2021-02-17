@@ -61,8 +61,6 @@ def view_select(choice):
         global images
         images = selection.get(choice)
         
-view_select(side,side2)
-        
 def show_image(choice):
     st.image(choice[view])
     st.subheader(choice.keys())
