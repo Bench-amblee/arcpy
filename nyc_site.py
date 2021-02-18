@@ -115,7 +115,7 @@ def home_page(x,y):
   col1.image(city_dict[x][y][z],width=1500)
   col2.header("")
   original = Image.open('images/white.jpg')
-  col2.image(original)
+  col2.image(original,width=1500)
   st.write(str(x)+ ' in ' +str(z))
                              
 home_page(side,side2)
