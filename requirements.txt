@@ -2,3 +2,4 @@ streamlit==0.76.0
 Pillow==8.1.0
 matplotlib==3.3.4
 arcgis == 1.8.4
+xlrd == 1.0.0
