@@ -7,7 +7,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from PIL import Image
 import time
-
+# Satellite
 fc_sat_1 = Image.open('images/fc_sat_1975.jfif')
 fc_sat_2 = Image.open('images/fc_sat_1988.jfif')
 fc_sat_3 = Image.open('images/fc_sat_1999.jfif')
@@ -44,47 +44,83 @@ si_sat_3 = Image.open('images/si_sat_1999.jfif')
 si_sat_4 = Image.open('images/si_sat_2010.jfif')
 si_sat_5 = Image.open('images/si_sat_2015.jfif')
 si_sat_6 = Image.open('images/si_sat_2020.jfif')
-
+#NDVI
+fc_ndvi_1 = Image.open('images/fc_ndvi_1975.png')
+fc_ndvi_2 = Image.open('images/fc_ndvi_1988.png')
+fc_ndvi_3 = Image.open('images/fc_ndvi_1999.png')
+fc_ndvi_4 = Image.open('images/fc_ndvi_2010.png')
+fc_ndvi_5 = Image.open('images/fc_ndvi_2015.png')
+fc_ndvi_6 = Image.open('images/fc_ndvi_2020.png')
+b_ndvi_1 = Image.open('images/b_ndvi_1975.png')
+b_ndvi_2 = Image.open('images/b_ndvi_1988.png')
+b_ndvi_3 = Image.open('images/b_ndvi_1999.png')
+b_ndvi_4 = Image.open('images/b_ndvi_2010.png')
+b_ndvi_5 = Image.open('images/b_ndvi_2015.png')
+b_ndvi_6 = Image.open('images/b_ndvi_2020.png')
+q_ndvi_1 = Image.open('images/q_ndvi_1975.png')
+q_ndvi_2 = Image.open('images/q_ndvi_1988.png')
+q_ndvi_3 = Image.open('images/q_ndvi_1999.png')
+q_ndvi_4 = Image.open('images/q_ndvi_2010.png')
+q_ndvi_5 = Image.open('images/q_ndvi_2015.png')
+q_ndvi_6 = Image.open('images/q_ndvi_2020.png')
+m_ndvi_1 = Image.open('images/m_ndvi_1975.png')
+m_ndvi_2 = Image.open('images/m_ndvi_1988.png')
+m_ndvi_3 = Image.open('images/m_ndvi_1999.png')
+m_ndvi_4 = Image.open('images/m_ndvi_2010.png')
+m_ndvi_5 = Image.open('images/m_ndvi_2015.png')
+m_ndvi_6 = Image.open('images/m_ndvi_2020.png')
+tb_ndvi_1 = Image.open('images/tb_ndvi_1975.png')
+tb_ndvi_2 = Image.open('images/tb_ndvi_1988.png')
+tb_ndvi_3 = Image.open('images/tb_ndvi_1999.png')
+tb_ndvi_4 = Image.open('images/tb_ndvi_2010.png')
+tb_ndvi_5 = Image.open('images/tb_ndvi_2015.png')
+tb_ndvi_6 = Image.open('images/tb_ndvi_2020.png')
+si_ndvi_1 = Image.open('images/si_ndvi_1975.png')
+si_ndvi_2 = Image.open('images/si_ndvi_1988.png')
+si_ndvi_3 = Image.open('images/si_ndvi_1999.png')
+si_ndvi_4 = Image.open('images/si_ndvi_2010.png')
+si_ndvi_5 = Image.open('images/si_ndvi_2015.png')
+si_ndvi_6 = Image.open('images/si_ndvi_2020.png')
 
 city_dict = {
   'Full_City':{
     'Satellite':{1975:fc_sat_1,1988:fc_sat_2,1999:fc_sat_3,2010:fc_sat_4,2015:fc_sat_5,2020:fc_sat_6},
-    'NDVI':[1975,1988,1999,2010,2015,2020],
+    'NDVI':{1975:fc_ndvi_1,1988:fc_ndvi_2,1999:fc_ndvi_3,2010:fc_ndvi_4,2015:fc_ndvi_5,2020:fc_ndvi_6},
     'Water':[1975,1988,1999,2010,2015,2020],
     'Buildings':[1975,1988,1999,2010,2015,2020],
     'Greenery':[1975,1988,1999,2010,2015,2020],
     'Full':[1975,1988,1999,2010,2015,2020]},
     'Brooklyn':{
       'Satellite':{1975:b_sat_1,1988:b_sat_2,1999:b_sat_3,2010:b_sat_4,2015:b_sat_5,2020:b_sat_6},
-      'NDVI':[1975,1988,1999,2010,2015,2020],
+      'NDVI':{1975:b_ndvi_1,1988:b_ndvi_2,1999:b_ndvi_3,2010:b_ndvi_4,2015:b_ndvi_5,2020:b_ndvi_6},
       'Water':[1975,1988,1999,2010,2015,2020],
       'Buildings':[1975,1988,1999,2010,2015,2020],
       'Greenery':[1975,1988,1999,2010,2015,2020],
       'Full':[1975,1988,1999,2010,2015,2020]},
       'Queens':{
         'Satellite':{1975:q_sat_1,1988:q_sat_2,1999:q_sat_3,2010:q_sat_4,2015:q_sat_5,2020:q_sat_6},
-        'NDVI':[1975,1988,1999,2010,2015,2020],
+        'NDVI':{1975:q_ndvi_1,1988:q_ndvi_2,1999:q_ndvi_3,2010:q_ndvi_4,2015:q_ndvi_5,2020:q_ndvi_6},
         'Water':[1975,1988,1999,2010,2015,2020],
         'Buildings':[1975,1988,1999,2010,2015,2020],
         'Greenery':[1975,1988,1999,2010,2015,2020],
         'Full':[1975,1988,1999,2010,2015,2020]},
         'Manhattan':{
           'Satellite':{1975:m_sat_1,1988:m_sat_2,1999:m_sat_3,2010:m_sat_4,2015:m_sat_5,2020:m_sat_6},
-          'NDVI':[1975,1988,1999,2010,2015,2020],
+          'NDVI':{1975:m_ndvi_1,1988:m_ndvi_2,1999:m_ndvi_3,2010:m_ndvi_4,2015:m_ndvi_5,2020:m_ndvi_6},
           'Water':[1975,1988,1999,2010,2015,2020],
           'Buildings':[1975,1988,1999,2010,2015,2020],
           'Greenery':[1975,1988,1999,2010,2015,2020],
           'Full':[1975,1988,1999,2010,2015,2020]},
           'The_Bronx':{
             'Satellite':{1975:tb_sat_1,1988:tb_sat_2,1999:tb_sat_3,2010:tb_sat_4,2015:tb_sat_5,2020:tb_sat_6},
-            'NDVI':[1975,1988,1999,2010,2015,2020],
+            'NDVI':{1975:tb_nvdi_1,1988:tb_nvdi_2,1999:tb_nvdi_3,2010:tb_nvdi_4,2015:tb_nvdi_5,2020:tb_nvdi_6},
             'Water':[1975,1988,1999,2010,2015,2020],
             'Buildings':[1975,1988,1999,2010,2015,2020],
             'Greenery':[1975,1988,1999,2010,2015,2020],
             'Full':[1975,1988,1999,2010,2015,2020]},
   'Staten_Island':{
     'Satellite':{1975:si_sat_1,1988:si_sat_2,1999:si_sat_3,2010:si_sat_4,2015:si_sat_5,2020:si_sat_6},
-    'NDVI':[1975,1988,1999,2010,2015,2020],
+    'NDVI':{1975:si_ndvi_1,1988:si_ndvi_2,1999:si_ndvi_3,2010:si_ndvi_4,2015:si_ndvi_5,2020:si_ndvi_6},
     'Water':[1975,1988,1999,2010,2015,2020],
     'Buildings':[1975,1988,1999,2010,2015,2020],
     'Greenery':[1975,1988,1999,2010,2015,2020],
