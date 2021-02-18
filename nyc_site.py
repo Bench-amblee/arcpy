@@ -77,7 +77,7 @@ side2 = st.sidebar.selectbox(
   ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
   
 )
-def home_page(x,y,z):
+def home_page(x,y):
   if x == '-----' or y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
   else:
