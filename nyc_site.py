@@ -90,13 +90,6 @@ city_dict = {
     'Greenery':[1975,1988,1999,2010,2015,2020],
     'Full':[1975,1988,1999,2010,2015,2020]}
         }
-full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
-              'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
-
-City = {0: image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
-              'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
-
-Brooklyn = [1,2,3]
 
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
