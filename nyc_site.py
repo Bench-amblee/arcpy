@@ -8,14 +8,6 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import time
 
-image1 = Image.open('images/nyc1.jfif')
-image2 = Image.open('images/nyc2.jfif')
-image3 = Image.open('images/nyc3.jfif')
-image4 = Image.open('images/nyc4.png')
-image5 = Image.open('images/nyc5.png')
-image6 = Image.open('images/nyc6.png')
-image7 = Image.open('images/nyc7.png')
-graph = Image.open('images/nycgraph1.png')
 fc_sat_1 = Image.open('images/fc_sat_1975.jfif')
 fc_sat_2 = Image.open('images/fc_sat_1988.jfif')
 fc_sat_3 = Image.open('images/fc_sat_1999.jfif')
