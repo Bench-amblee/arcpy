@@ -113,7 +113,7 @@ city_dict = {
           'Full':[1975,1988,1999,2010,2015,2020]},
           'The_Bronx':{
             'Satellite':{1975:tb_sat_1,1988:tb_sat_2,1999:tb_sat_3,2010:tb_sat_4,2015:tb_sat_5,2020:tb_sat_6},
-            'NDVI':{1975:tb_nvdi_1,1988:tb_nvdi_2,1999:tb_nvdi_3,2010:tb_nvdi_4,2015:tb_nvdi_5,2020:tb_nvdi_6},
+            'NDVI':{1975:tb_ndvi_1,1988:tb_ndvi_2,1999:tb_ndvi_3,2010:tb_ndvi_4,2015:tb_ndvi_5,2020:tb_ndvi_6},
             'Water':[1975,1988,1999,2010,2015,2020],
             'Buildings':[1975,1988,1999,2010,2015,2020],
             'Greenery':[1975,1988,1999,2010,2015,2020],
