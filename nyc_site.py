@@ -94,7 +94,7 @@ city_dict = {
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
     'Select a Location',
-    ('-----', 'Full City','Brookyln', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
+    ('-----', 'Full City','Brooklyn', 'Queens', 'Manhattan', 'The Bronx', 'Staten Island')
 )
 side2 = st.sidebar.selectbox(
   'Select a View',
