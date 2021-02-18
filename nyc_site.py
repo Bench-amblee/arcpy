@@ -77,7 +77,6 @@ side2 = st.sidebar.selectbox(
   ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
   
 )
-@st.cache
 def home_page(x,y):
   if x == 'Full City':
     x = 'Full_City'
@@ -85,40 +84,3 @@ def home_page(x,y):
   st.image(city_dict[x][y][z])
                              
 home_page(side,side2)
-
-
-hmm = '''def show_image(choice):
-    if choice in full_city_dict.keys():
-        st.image(full_city_dict[choice])
-        st.subheader(choice)
-        if choice == 'Water':
-            st.write('Water Cover Percentage: 36.3%')
-        if choice == 'Greenery':
-            st.write('Greenery Cover Percentage: 15.1%')
-        if choice == 'Concrete':
-            st.write('Concrete and Building Cover Percentage: 48.6%')
-        if choice == 'Final':
-            st.image(graph)
-show_image(view)
-'''
-def view_select(choice):
-    if choice in selection.keys():
-        global images
-        images = selection.get(choice)
-        
-def show_image(choice):
-    st.image(choice[view])
-    st.subheader(choice.keys())
-    if choice == 'Water':
-      st.write('Water Cover Percentage: 36.3%')
-    if choice == 'Greenery':
-      st.write('Greenery Cover Percentage: 15.1%')
-    if choice == 'Concrete':
-      st.write('Concrete and Building Cover Percentage: 48.6%')
-    if choice == 'Final':
-      st.image(graph)
-            
-#view_select(side)
-#show_image(images)
-
-
