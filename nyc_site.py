@@ -130,7 +130,12 @@ def home_page(x,y):
     global y_
     y_ = y.replace(" ","_")
   else:
-    y_ = y 
+    y_ = y
+  #satellite
+  if y == 'Satellite':
+    z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
+    st.image(city_dict[x_][y_][z],width=1400)
+    st.write(str(x)+ ' in ' +str(z))
   #ndvi graphs
   if y == 'NDVI Filter':
     col1, col2 = st.beta_columns(2)
@@ -150,7 +155,7 @@ def home_page(x,y):
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
-      st.write(str(x)+ ' in ' +str(z))
+      st.write(str(x)+ ' in ' +str(a))
       df = pd.read_excel(Hists, x_)
       fig2, ax1 = plt.subplots()
       #ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
@@ -158,13 +163,10 @@ def home_page(x,y):
       fig2 = plt.gcf()
       fig2.set_size_inches(1.5,1.5)
       st.pyplot(fig2)
-  z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
-  st.image(city_dict[x_][y_][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
   #col1.image(city_dict[x][y][z],width=1200)
   #col2.image(original)
   #col3.image(original)
-  st.write(str(x)+ ' in ' +str(z))
                              
 home_page(side,side2)
