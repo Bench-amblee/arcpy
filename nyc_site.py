@@ -134,7 +134,7 @@ side = st.sidebar.selectbox(
 )
 side2 = st.sidebar.selectbox(
   'Select a View',
-  ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
+  ('-----', 'Satellite','NDVI Filter','Water','Buildings','Greenery','Full')
   
 )
 def home_page(x,y):
@@ -144,6 +144,8 @@ def home_page(x,y):
     x = 'The_Bronx'
   if x == 'Staten Island':
     x = 'Staten_Island'
+  if y == 'NDVI Filter':
+    y = 'NDVI'
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x][y][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
