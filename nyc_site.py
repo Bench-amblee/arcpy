@@ -109,13 +109,7 @@ def home_page(x,y):
   if x == 'Staten Island':
     x = 'Staten_Island'
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
-  #st.image(city_dict[x][y][z],width=1500)
-  col1, col2 = st.beta_columns(2)
-  col1.header("Original")
-  col1.image(city_dict[x][y][z],width=1500)
-  col2.header("")
-  original = Image.open('images/white.jpg')
-  col2.image(original,width=1500)
+  st.image(city_dict[x][y][z],width=1500)
   st.write(str(x)+ ' in ' +str(z))
                              
 home_page(side,side2)
