@@ -90,7 +90,7 @@ city_dict = {
     'Greenery':[1975,1988,1999,2010,2015,2020],
     'Full':[1975,1988,1999,2010,2015,2020]}
         }
-
+st. set_page_config(layout="wide")
 st.title('New York City Landcover Analysis')
 side = st.sidebar.selectbox(
     'Select a Location',
