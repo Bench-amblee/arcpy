@@ -77,6 +77,7 @@ side2 = st.sidebar.selectbox(
   ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
   
 )
+@st.cache
 def home_page(x,y):
   if x == 'Full City':
     x = 'Full_City'
