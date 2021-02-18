@@ -110,6 +110,6 @@ def home_page(x,y):
     x = 'Staten_Island'
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x][y][z])
-  st.write('New York City in ' +str(z))
+  st.write(str(x)+ ' in ' +str(z))
                              
 home_page(side,side2)
