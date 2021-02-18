@@ -84,8 +84,6 @@ def home_page(x,y):
     x = 'Full_City'
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x][y][z])
-  
-home_page(side,side2,)
                              
 
 
