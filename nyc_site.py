@@ -142,7 +142,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x_)
       st.bar_chart(df[a])
-  z = st.select_slider('Year ',options= [1975, 1988, 1999, 2010, 2015, 2020])
+  z = st.select_slider('Year',options= [1988, 1999, 2010, 2015, 2020, 1975])
   st.image(city_dict[x_][y_][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
