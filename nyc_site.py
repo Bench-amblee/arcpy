@@ -150,7 +150,7 @@ def home_page(x,y):
       #ax1.pie(df[z],labels=labels,colors=colors,autopct='%1.1f%%')
       ax1.pie(df[z],colors=colors)
       fig1 = plt.gcf()
-      fig1.set_size_inches(1.5,1.5)
+      fig1.set_size_inches(1.2,1.2)
       st.pyplot(fig1)
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
@@ -161,7 +161,7 @@ def home_page(x,y):
       #ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
       ax1.pie(df[a],colors=colors)
       fig2 = plt.gcf()
-      fig2.set_size_inches(1.5,1.5)
+      fig2.set_size_inches(1.2,1.2)
       st.pyplot(fig2)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
