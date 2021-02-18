@@ -80,11 +80,10 @@ side2 = st.sidebar.selectbox(
 def home_page(x,y):
   if x == '-----' or y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
-  else:
-    if x == 'Full City':
-      x = 'Full_City'
-    z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
-    st.image(city_dict[x][y][z])
+  if x == 'Full City':
+    x = 'Full_City'
+  z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
+  st.image(city_dict[x][y][z])
   
 home_page(side,side2,)
                              
