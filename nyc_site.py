@@ -134,12 +134,12 @@ def home_page(x,y):
     z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
     col1, col2 = st.beta_columns(2)
     with col1:
-      st.image(city_dict[x_][y_][z]
+      st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x)
       st.bar(df[z])
     with coll2:
       a = z[-1]
-      st.image(city_dict[x_][y_][a]
+      st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x)
       st.bar(df[a])
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
