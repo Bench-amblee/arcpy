@@ -119,7 +119,9 @@ side2 = st.sidebar.selectbox(
   
 )
 def home_page(x,y):
-  if x == '-----' or y == '-----':
+  if x == '-----':
+    st.write('pick an option using the left sidebar')
+  if y == '-----':
     st.write('pick an option using the left sidebar')
   if x == 'Full City' or x == 'The Bronx' or x == 'Staten Island':
     global x_
