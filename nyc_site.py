@@ -38,12 +38,12 @@ tb_sat_3 = Image.open('images/tb_sat_1999.jfif')
 tb_sat_4 = Image.open('images/tb_sat_2010.jfif')
 tb_sat_5 = Image.open('images/tb_sat_2015.jfif')
 tb_sat_6 = Image.open('images/tb_sat_2020.jfif')
-si_sat_1 = Image.open('image/si_sat_1975.jfif')
-si_sat_2 = Image.open('image/si_sat_1988.jfif')
-si_sat_3 = Image.open('image/si_sat_1999.jfif')
-si_sat_4 = Image.open('image/si_sat_2010.jfif')
-si_sat_5 = Image.open('image/si_sat_2015.jfif')
-si_sat_6 = Image.open('image/si_sat_2020.jfif')
+si_sat_1 = Image.open('images/si_sat_1975.jfif')
+si_sat_2 = Image.open('images/si_sat_1988.jfif')
+si_sat_3 = Image.open('images/si_sat_1999.jfif')
+si_sat_4 = Image.open('images/si_sat_2010.jfif')
+si_sat_5 = Image.open('images/si_sat_2015.jfif')
+si_sat_6 = Image.open('images/si_sat_2020.jfif')
 
 
 city_dict = {
