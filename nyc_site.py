@@ -15,6 +15,29 @@ image5 = Image.open('images/nyc5.png')
 image6 = Image.open('images/nyc6.png')
 image7 = Image.open('images/nyc7.png')
 graph = Image.open('images/nycgraph1.png')
+fc_sat_1 = Image.open('images/fc_sat_1975.jfif')
+fc_sat_2 = Image.open('images/fc_sat_1988.jfif')
+fc_sat_3 = Image.open('images/fc_sat_1999.jfif')
+fc_sat_4 = Image.open('images/fc_sat_2010.jfif')
+fc_sat_5 = Image.open('images/fc_sat_2015.jfif')
+fc_sat_6 = Image.open('images/fc_sat_2020.jfif')
+
+city_dict = {
+  'Full_City':{'Satellite':{1975:fc_sat_1,1988:fc_sat_2,1999:fc_sat_3,2010:fc_sat_4,2015:fc_sat_5,2020:fc_sat_6},'NDVI':[1975,1988,1999,2010,2015,2020],
+               'Water':[1975,1988,1999,2010,2015,2020],'Buildings':[1975,1988,1999,2010,2015,2020],
+               'Greenery':[1975,1988,1999,2010,2015,2020],'Full':[1975,1988,1999,2010,2015,2020]}
+  'Brooklyn':{'Satellite':[1975,1988,1999,2010,2015,2020],'NDVI':[1975,1988,1999,2010,2015,2020],
+               'Water':[1975,1988,1999,2010,2015,2020],'Buildings':[1975,1988,1999,2010,2015,2020],
+               'Greenery':[1975,1988,1999,2010,2015,2020],'Full':[1975,1988,1999,2010,2015,2020]}}
+  'Queens':{'Satellite':[1975,1988,1999,2010,2015,2020],'NDVI':[1975,1988,1999,2010,2015,2020],
+               'Water':[1975,1988,1999,2010,2015,2020],'Buildings':[1975,1988,1999,2010,2015,2020],
+               'Greenery':[1975,1988,1999,2010,2015,2020],'Full':[1975,1988,1999,2010,2015,2020]}}
+  'Manhattan':{'Satellite':[1975,1988,1999,2010,2015,2020],'NDVI':[1975,1988,1999,2010,2015,2020],
+               'Water':[1975,1988,1999,2010,2015,2020],'Buildings':[1975,1988,1999,2010,2015,2020],
+               'Greenery':[1975,1988,1999,2010,2015,2020],'Full':[1975,1988,1999,2010,2015,2020]}}
+  'The_Bronx':{'Satellite':[1975,1988,1999,2010,2015,2020],'NDVI':[1975,1988,1999,2010,2015,2020],
+               'Water':[1975,1988,1999,2010,2015,2020],'Buildings':[1975,1988,1999,2010,2015,2020],
+               'Greenery':[1975,1988,1999,2010,2015,2020],'Full':[1975,1988,1999,2010,2015,2020]}}}
 
 full_city_dict = {'Satellite': image1,'NDVI Filter': image2,'City Boundary Cutout': image3,
               'Water': image5, 'Concrete': image6, 'Greenery': image7, 'Final': image4}
@@ -34,16 +57,18 @@ side2 = st.sidebar.selectbox(
   ('-----', 'Satellite','NDVI filter','Water','Buildings','Greenery','Full')
   
 )
-def home_page(x,y):
+def home_page(x,y,z):
   if x == '-----' or y == '-----':
     st.write('Select a location and view using the left sidebar to see how to landcover has changed over time')
   else:
-    x = Brooklyn
-    st.write(x[0])
+    if x == 'Full City':
+      x = 'Full_City'
+    z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
+    st.image(city_dict[x][y][z])
   
-home_page(side,side2)
+home_page(side,side2,)
                              
-view = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
+
 
 
 hmm = '''def show_image(choice):
