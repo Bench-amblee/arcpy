@@ -139,6 +139,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x_)
       fig1, ax1 = plt.subplots()
+      fig1.figure(figsize = 3,3)
       ax1.pie(df[z],labels=labels,colors=colors,autopct='%1.1f%%')
       st.pyplot(fig1)
     with col2:
@@ -147,6 +148,7 @@ def home_page(x,y):
       df = pd.read_excel(Hists, x_)
       fig2, ax1 = plt.subplots()
       ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
+      fig2.figure(figsize = 3,3)
       st.pyplot(fig2)
   z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x_][y_][z],width=1400)
