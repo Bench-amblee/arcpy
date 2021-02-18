@@ -115,9 +115,9 @@ side2 = st.sidebar.selectbox(
 )
 def home_page(x,y):
   if x == 'Full City' or x == 'The Bronx' or x == 'Staten Island':
-    x_ = string.replace(" ","_") 
+    x_ = x.replace(" ","_") 
   if y == 'NDVI Filter':
-    y_ = string = string.replace(" ","_") 
+    y_ = y.replace(" ","_") 
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x][y][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
