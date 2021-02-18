@@ -85,46 +85,22 @@ si_ndvi_6 = Image.open('images/si_ndvi_2020.png')
 city_dict = {
   'Full_City':{
     'Satellite':{1975:fc_sat_1,1988:fc_sat_2,1999:fc_sat_3,2010:fc_sat_4,2015:fc_sat_5,2020:fc_sat_6},
-    'NDVI':{1975:fc_ndvi_1,1988:fc_ndvi_2,1999:fc_ndvi_3,2010:fc_ndvi_4,2015:fc_ndvi_5,2020:fc_ndvi_6},
-    'Water':[1975,1988,1999,2010,2015,2020],
-    'Buildings':[1975,1988,1999,2010,2015,2020],
-    'Greenery':[1975,1988,1999,2010,2015,2020],
-    'Full':[1975,1988,1999,2010,2015,2020]},
+    'NDVI':{1975:fc_ndvi_1,1988:fc_ndvi_2,1999:fc_ndvi_3,2010:fc_ndvi_4,2015:fc_ndvi_5,2020:fc_ndvi_6}},
     'Brooklyn':{
       'Satellite':{1975:b_sat_1,1988:b_sat_2,1999:b_sat_3,2010:b_sat_4,2015:b_sat_5,2020:b_sat_6},
-      'NDVI':{1975:b_ndvi_1,1988:b_ndvi_2,1999:b_ndvi_3,2010:b_ndvi_4,2015:b_ndvi_5,2020:b_ndvi_6},
-      'Water':[1975,1988,1999,2010,2015,2020],
-      'Buildings':[1975,1988,1999,2010,2015,2020],
-      'Greenery':[1975,1988,1999,2010,2015,2020],
-      'Full':[1975,1988,1999,2010,2015,2020]},
+      'NDVI':{1975:b_ndvi_1,1988:b_ndvi_2,1999:b_ndvi_3,2010:b_ndvi_4,2015:b_ndvi_5,2020:b_ndvi_6}},
       'Queens':{
         'Satellite':{1975:q_sat_1,1988:q_sat_2,1999:q_sat_3,2010:q_sat_4,2015:q_sat_5,2020:q_sat_6},
-        'NDVI':{1975:q_ndvi_1,1988:q_ndvi_2,1999:q_ndvi_3,2010:q_ndvi_4,2015:q_ndvi_5,2020:q_ndvi_6},
-        'Water':[1975,1988,1999,2010,2015,2020],
-        'Buildings':[1975,1988,1999,2010,2015,2020],
-        'Greenery':[1975,1988,1999,2010,2015,2020],
-        'Full':[1975,1988,1999,2010,2015,2020]},
+        'NDVI':{1975:q_ndvi_1,1988:q_ndvi_2,1999:q_ndvi_3,2010:q_ndvi_4,2015:q_ndvi_5,2020:q_ndvi_6}},
         'Manhattan':{
           'Satellite':{1975:m_sat_1,1988:m_sat_2,1999:m_sat_3,2010:m_sat_4,2015:m_sat_5,2020:m_sat_6},
-          'NDVI':{1975:m_ndvi_1,1988:m_ndvi_2,1999:m_ndvi_3,2010:m_ndvi_4,2015:m_ndvi_5,2020:m_ndvi_6},
-          'Water':[1975,1988,1999,2010,2015,2020],
-          'Buildings':[1975,1988,1999,2010,2015,2020],
-          'Greenery':[1975,1988,1999,2010,2015,2020],
-          'Full':[1975,1988,1999,2010,2015,2020]},
+          'NDVI':{1975:m_ndvi_1,1988:m_ndvi_2,1999:m_ndvi_3,2010:m_ndvi_4,2015:m_ndvi_5,2020:m_ndvi_6}},
           'The_Bronx':{
             'Satellite':{1975:tb_sat_1,1988:tb_sat_2,1999:tb_sat_3,2010:tb_sat_4,2015:tb_sat_5,2020:tb_sat_6},
-            'NDVI':{1975:tb_ndvi_1,1988:tb_ndvi_2,1999:tb_ndvi_3,2010:tb_ndvi_4,2015:tb_ndvi_5,2020:tb_ndvi_6},
-            'Water':[1975,1988,1999,2010,2015,2020],
-            'Buildings':[1975,1988,1999,2010,2015,2020],
-            'Greenery':[1975,1988,1999,2010,2015,2020],
-            'Full':[1975,1988,1999,2010,2015,2020]},
+            'NDVI':{1975:tb_ndvi_1,1988:tb_ndvi_2,1999:tb_ndvi_3,2010:tb_ndvi_4,2015:tb_ndvi_5,2020:tb_ndvi_6}},
   'Staten_Island':{
     'Satellite':{1975:si_sat_1,1988:si_sat_2,1999:si_sat_3,2010:si_sat_4,2015:si_sat_5,2020:si_sat_6},
-    'NDVI':{1975:si_ndvi_1,1988:si_ndvi_2,1999:si_ndvi_3,2010:si_ndvi_4,2015:si_ndvi_5,2020:si_ndvi_6},
-    'Water':[1975,1988,1999,2010,2015,2020],
-    'Buildings':[1975,1988,1999,2010,2015,2020],
-    'Greenery':[1975,1988,1999,2010,2015,2020],
-    'Full':[1975,1988,1999,2010,2015,2020]}
+    'NDVI':{1975:si_ndvi_1,1988:si_ndvi_2,1999:si_ndvi_3,2010:si_ndvi_4,2015:si_ndvi_5,2020:si_ndvi_6}}
         }
 st. set_page_config(layout="wide")
 st.title('New York City Landcover Analysis')
@@ -134,18 +110,14 @@ side = st.sidebar.selectbox(
 )
 side2 = st.sidebar.selectbox(
   'Select a View',
-  ('-----', 'Satellite','NDVI Filter','Water','Buildings','Greenery','Full')
+  ('-----', 'Satellite','NDVI Filter')
   
 )
 def home_page(x,y):
-  if x == 'Full City':
-    x = 'Full_City'
-  if x == 'The Bronx':
-    x = 'The_Bronx'
-  if x == 'Staten Island':
-    x = 'Staten_Island'
+  if x == 'Full City' or x == 'The Bronx' or x == 'Staten Island':
+    x_ = string.replace(" ","_") 
   if y == 'NDVI Filter':
-    y = 'NDVI'
+    y_ = string = string.replace(" ","_") 
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x][y][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
