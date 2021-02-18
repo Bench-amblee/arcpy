@@ -137,7 +137,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x_)
       st.bar_chart(df[z])
-    with coll2:
+    with col2:
       a = z[-1]
       st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x_)
