@@ -82,13 +82,6 @@ def home_page(x,y):
   if x == 'Full City':
     x = 'Full_City'
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
-  info_obj = st.elements.Info(value)
-  st.write(z)
-  st.write(info_obj)
-  if st.button('animate'):
-    time.sleep(.5)
-    z.value += 1
-    info_obj.body = slider_obj.value
   st.image(city_dict[x][y][z])
   st.write('New York City in ' +str(z))
                              
