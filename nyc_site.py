@@ -131,14 +131,14 @@ def home_page(x,y):
     y_ = y 
   #ndvi graphs
   if y == 'NDVI Filter':
-    z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
     col1, col2 = st.beta_columns(2)
     with col1:
+      z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
       st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x_)
       st.bar_chart(df[z])
     with col2:
-      a = z[-1]
+      a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
       st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x_)
       st.bar_chart(df[a])
