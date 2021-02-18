@@ -139,14 +139,14 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x_)
       fig1 = df[z]
-      fig1.plot(type='pie',figsize=(3,3),labels=labels,colors=colors,autopct='%1.1f%%')
+      fig1.plot.pie(figsize=(3,3),labels=labels,colors=colors,autopct='%1.1f%%')
       st.pyplot(fig1)
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x_)
       fig2 = df[a]
-      fig2.plot(type='pie',figsize=(3,3),labels=labels,colors=colors,autopct='%1.1f%%')
+      fig2.plot.pie(figsize=(3,3),labels=labels,colors=colors,autopct='%1.1f%%')
       st.pyplot(fig2)
   z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x_][y_][z],width=1400)
