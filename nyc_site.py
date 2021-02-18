@@ -119,7 +119,7 @@ def home_page(x,y):
   if y == 'NDVI Filter':
     y_ = y.replace(" ","_") 
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
-  st.image(city_dict[x][y][z],width=1400)
+  st.image(city_dict[x_][y_][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
   #col1.image(city_dict[x][y][z],width=1200)
