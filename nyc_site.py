@@ -132,16 +132,22 @@ def home_page(x,y):
   #ndvi graphs
   if y == 'NDVI Filter':
     col1, col2 = st.beta_columns(2)
+    labels = 'Water','Buildings','Greenery'
+    colors=['#01FFF8','#909494','#0EF716']
     with col1:
       z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare1')
       st.image(city_dict[x_][y_][z])
       df = pd.read_excel(Hists, x_)
-      st.bar_chart(df[z])
+      fig1, ax1 = plt.subplots()
+      ax1.pie(df[z],labels=labels,colors=colors,autopct='%1.1f%%')
+      plt.show()
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
       df = pd.read_excel(Hists, x_)
-      st.bar_chart(df[a])
+      fig1, ax1 = plt.subplots()
+      ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
+      plt.show()
   z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x_][y_][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
