@@ -141,7 +141,7 @@ def home_page(x,y):
       fig1, ax1 = plt.subplots()
       ax1.pie(df[z],labels=labels,colors=colors,autopct='%1.1f%%')
       fig1 = plt.gcf()
-      fig1.set_size_inches(3,3)
+      fig1.set_size_inches(2,2)
       st.pyplot(fig1)
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
@@ -150,7 +150,7 @@ def home_page(x,y):
       fig2, ax1 = plt.subplots()
       ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
       fig2 = plt.gcf()
-      fig2.set_size_inches(3,3)
+      fig2.set_size_inches(2,2)
       st.pyplot(fig2)
   z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x_][y_][z],width=1400)
