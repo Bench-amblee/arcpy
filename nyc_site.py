@@ -4,6 +4,7 @@
 # In[1]:
 
 import streamlit as st
+import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import time
@@ -81,6 +82,8 @@ si_ndvi_3 = Image.open('images/si_ndvi_1999.png')
 si_ndvi_4 = Image.open('images/si_ndvi_2010.png')
 si_ndvi_5 = Image.open('images/si_ndvi_2015.png')
 si_ndvi_6 = Image.open('images/si_ndvi_2020.png')
+#data 
+Hists = pd.ExcelFile('data/nyc_site_hist_values.xlsx')
 
 city_dict = {
   'Full_City':{
@@ -114,6 +117,8 @@ side2 = st.sidebar.selectbox(
   
 )
 def home_page(x,y):
+  if x == '-----' or y == '-----':
+    st.write('pick an option using the left sidebar')
   if x == 'Full City' or x == 'The Bronx' or x == 'Staten Island':
     global x_
     x_ = x.replace(" ","_")
@@ -124,6 +129,19 @@ def home_page(x,y):
     y_ = y.replace(" ","_")
   else:
     y_ = y 
+  #ndvi graphs
+  if y == 'NDVI Filter':
+    z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
+    col1, col2 = st.beta_columns(2)
+    with col1:
+      st.image(city_dict[x_][y_][z]
+      df = pd.read_excel(Hists, x)
+      st.bar(df[z])
+    with coll2:
+      a = z[-1]
+      st.image(city_dict[x_][y_][a]
+      df = pd.read_excel(Hists, x)
+      st.bar(df[a])
   z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020])
   st.image(city_dict[x_][y_][z],width=1400)
   #col1, col2, col3 = st.beta_columns(3)
