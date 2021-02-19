@@ -150,9 +150,11 @@ def home_page(x,y):
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
-      st.write('    Water            Buildings        Greenery    ')
       df = pd.read_excel(Hists,x_)
-      st.bar_chart(df[a])
+      data = [df1[0], df2[a]]
+      df3 = pd.concat(data, axis=1)
+      df3.setindex('Name')
+      st.bar_chart(df3)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
   #col1.image(city_dict[x][y][z],width=1200)
