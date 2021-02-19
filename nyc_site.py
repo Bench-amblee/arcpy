@@ -150,7 +150,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
       df = pd.read_excel(Hists,x_)
-      st.bar_chart(df[:a])
+      st.bar_chart(df[a])
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
   #col1.image(city_dict[x][y][z],width=1200)
