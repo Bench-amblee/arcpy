@@ -8,8 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import time
-import matplotlib as mpl
-mpl.rcParams['font.size'] = 3.0
 # Satellite
 fc_sat_1 = Image.open('images/fc_sat_1975.jfif')
 fc_sat_2 = Image.open('images/fc_sat_1988.jfif')
@@ -146,23 +144,15 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][z])
       st.write(str(x)+ ' in ' +str(z))
       df = pd.read_excel(Hists, x_)
-      fig1, ax1 = plt.subplots()
-      #ax1.pie(df[z],labels=labels,colors=colors,autopct='%1.1f%%')
-      ax1.pie(df[z],colors=colors)
-      fig1 = plt.gcf()
-      fig1.set_size_inches(1.2,1.2)
-      st.pyplot(fig1)
+      df.set_index('Name')
+      st.bar_chart(df[z])
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
       df = pd.read_excel(Hists, x_)
-      fig2, ax1 = plt.subplots()
-      #ax1.pie(df[a],labels=labels,colors=colors,autopct='%1.1f%%')
-      ax1.pie(df[a],colors=colors)
-      fig2 = plt.gcf()
-      fig2.set_size_inches(1.2,1.2)
-      st.pyplot(fig2)
+      df.set_index('Name')
+      st.bar_chart(df[a])
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
   #col1.image(city_dict[x][y][z],width=1200)
