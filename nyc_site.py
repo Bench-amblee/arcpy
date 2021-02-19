@@ -120,6 +120,7 @@ side2 = st.sidebar.selectbox(
 def home_page(x,y):
   if x == '-----' or y == '-----':
     st.write('pick a location and a view using the left sidebar')
+    st.image(![](images/ndvi.png))
     st.markdown('This project uses landsat imagery from 1975 to 2020 to classify the land cover of NYC into NDVI values')
     st.markdown('use the **Satellite** tab to view satellite imagery of NYC over the years')
     st.markdown('use the **NDVI Filter** tab to compare the land cover of NYC or NYC Boroughs')
