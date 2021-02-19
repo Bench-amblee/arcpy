@@ -151,7 +151,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
       df = pd.read_excel(Hists,x_)
-      data = [df['Name'], df[:a]]
+      data = [df['Name'], df[a]]
       df3 = pd.concat(data, axis=1)
       df3.set_index('Name')
       st.dataframe(df3.style.highlight_max(axis=0))
