@@ -155,7 +155,8 @@ def home_page(x,y):
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
       data = df[z]
-      st.dataframe(data)
+      data.index = ['Water','Buildings','Greenery']
+      st.bar_chart(data)
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
@@ -165,6 +166,6 @@ def home_page(x,y):
       df = pd.read_excel(Hists,x_)
       data = df[a]
       data.index = ['Water','Buildings','Greenery']
-      st.dataframe(data)
+      st.bar_chart(data)
                              
 home_page(side,side2)
