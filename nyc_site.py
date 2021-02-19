@@ -143,13 +143,21 @@ def home_page(x,y):
       z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare1')
       st.image(city_dict[x_][y_][z])
       st.write(str(x)+ ' in ' +str(z))
-      st.write('    Water            Buildings        Greenery    ')
+      st.write('')
+      st.write('values represent to total number of pixels')
+      st.write('each pixel is approximately 0.002 square miles.'
       df = pd.read_excel(Hists,x_)
-      st.bar_chart(df[z])
+      data = [df['Name'], df[z]]
+      df3 = pd.concat(data, axis=1)
+      df3.set_index('Name')
+      st.dataframe(df3.style.highlight_max(axis=0))
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
+      st.write('')
+      st.write('values represent to total number of pixels')
+      st.write('each pixel is approximately 0.002 square miles.'
       df = pd.read_excel(Hists,x_)
       data = [df['Name'], df[a]]
       df3 = pd.concat(data, axis=1)
