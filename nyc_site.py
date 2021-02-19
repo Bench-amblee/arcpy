@@ -147,8 +147,6 @@ def home_page(x,y):
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
       data = df[z]
-      df3 = pd.concat(data, axis=1)
-      df3.set_index('Name')
       st.dataframe(df3.style.highlight_max(axis=0))
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
@@ -158,13 +156,6 @@ def home_page(x,y):
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
       data = df[a]
-      df3 = pd.concat(data, axis=1)
-      df3.set_index('Name')
       st.dataframe(df3.style.highlight_max(axis=0))
-  #col1, col2, col3 = st.beta_columns(3)
-  #original = Image.open('images/white.jpg')
-  #col1.image(city_dict[x][y][z],width=1200)
-  #col2.image(original)
-  #col3.image(original)
                              
 home_page(side,side2)
