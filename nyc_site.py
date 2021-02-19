@@ -82,6 +82,7 @@ si_ndvi_3 = Image.open('images/si_ndvi_1999.png')
 si_ndvi_4 = Image.open('images/si_ndvi_2010.png')
 si_ndvi_5 = Image.open('images/si_ndvi_2015.png')
 si_ndvi_6 = Image.open('images/si_ndvi_2020.png')
+ndvi = Image.open('images/ndvi.png')
 #data 
 Hists = pd.ExcelFile('data/nyc_site_hist_values.xlsx')
 
@@ -118,7 +119,12 @@ side2 = st.sidebar.selectbox(
 )
 def home_page(x,y):
   if x == '-----' or y == '-----':
-    st.write('pick an option using the left sidebar')
+    st.write('pick a location and a view using the left sidebar')
+    st.markdown('This project uses landsat imagery from 1975 to 2020 to classify the land cover of NYC into NDVI values')
+    st.image(ndvi)
+    st.markdown('use the **Satellite** tab to view satellite imagery of NYC over the years')
+    st.markdown('use the **NDVI Filter** tab to compare the land cover of NYC or NYC Boroughs')
+    st.markdown('Full code and notebooks can be found at: https://github.com/Bench-amblee/arcpy')
   if x == 'Full City' or x == 'The Bronx' or x == 'Staten Island':
     global x_
     x_ = x.replace(" ","_")
