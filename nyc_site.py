@@ -142,7 +142,8 @@ def home_page(x,y):
     col1, col2 = st.beta_columns(2)
     with col1:
       z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
-      st.image(city_dict[x_][y_][z],use_column_width=True)
+      #st.image(city_dict[x_][y_][z],use_column_width=True)
+      st.image(city_dict[x_][y_][z],width=1200)
       st.title(str(x)+ ' in ' +str(z))
   #ndvi graphs
   if y == 'NDVI Filter':
