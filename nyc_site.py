@@ -151,7 +151,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][a])
       st.write(str(x)+ ' in ' +str(a))
       df = pd.read_excel(Hists,x_)
-      data = [df[0], df[a]]
+      data = [df['Name'], df[a]]
       df3 = pd.concat(data, axis=1)
       df3.setindex('Name')
       st.bar_chart(df3)
