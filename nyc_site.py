@@ -153,6 +153,7 @@ def home_page(x,y):
       df = pd.read_excel(Hists,x_)
       data = [df['Name'], df[a]]
       df3 = pd.concat(data, axis=1)
+      df3 = df3(columns=a)
       df3.set_index('Name')
       st.bar_chart(df3)
       st.dataframe(df3)
