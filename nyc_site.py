@@ -142,8 +142,7 @@ def home_page(x,y):
     with col1:
       z = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare1')
       st.image(city_dict[x_][y_][z])
-      st.write(str(x)+ ' in ' +str(z))
-      st.write('')
+      st.title(str(x)+ ' in ' +str(z))
       st.write('values represent to total number of pixels')
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
@@ -154,8 +153,7 @@ def home_page(x,y):
     with col2:
       a = st.select_slider('Year',options= [1975, 1988, 1999, 2010, 2015, 2020],key='compare2')
       st.image(city_dict[x_][y_][a])
-      st.write(str(x)+ ' in ' +str(a))
-      st.write('')
+      st.title(str(x)+ ' in ' +str(a))
       st.write('values represent to total number of pixels')
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
