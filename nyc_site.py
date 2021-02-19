@@ -154,7 +154,7 @@ def home_page(x,y):
       data = [df['Name'], df[a]]
       df3 = pd.concat(data, axis=1)
       df3.set_index('Name')
-      #st.bar_chart(df3)
+      st.bar_chart(df3)
       st.dataframe(df3)
   #col1, col2, col3 = st.beta_columns(3)
   #original = Image.open('images/white.jpg')
