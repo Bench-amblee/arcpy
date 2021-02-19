@@ -146,7 +146,7 @@ def home_page(x,y):
       st.write('values represent to total number of pixels')
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
-      data = [df['Name'], df[z]]
+      data = df[z]
       df3 = pd.concat(data, axis=1)
       df3.set_index('Name')
       st.dataframe(df3.style.highlight_max(axis=0))
@@ -157,7 +157,7 @@ def home_page(x,y):
       st.write('values represent to total number of pixels')
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
-      data = [df['Name'], df[a]]
+      data = df[a]
       df3 = pd.concat(data, axis=1)
       df3.set_index('Name')
       st.dataframe(df3.style.highlight_max(axis=0))
