@@ -164,6 +164,7 @@ def home_page(x,y):
       st.write('each pixel is approximately 0.002 square miles.')
       df = pd.read_excel(Hists,x_)
       data = df[a]
+      data.index = ['Water','Buildings','Greenery']
       st.dataframe(data)
                              
 home_page(side,side2)
