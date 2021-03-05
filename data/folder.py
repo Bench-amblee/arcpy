@@ -1,1 +1,1 @@
-print('This folder is used to store relevant data')
+print('This folder is for data related to this project')
