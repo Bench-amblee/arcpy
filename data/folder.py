@@ -1,1 +1,1 @@
-print('This folder is just for data')
+print('This folder is for data related to this repo')
