@@ -145,6 +145,7 @@ def home_page(x,y):
       st.image(city_dict[x_][y_][z],use_column_width=True)
       #st.image(city_dict[x_][y_][z],width=1200)
       st.title(str(x)+ ' in ' +str(z))
+      st.write('Select **NDVI Filter** to see the landcover classification')
   #ndvi graphs
   if y == 'NDVI Filter':
     col1, col2 = st.beta_columns(2)
