@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import time
+
 # Satellite
 fc_sat_1 = Image.open('images/fc_sat_1975.jfif')
 fc_sat_2 = Image.open('images/fc_sat_1988.jfif')
