@@ -1,5 +1,5 @@
 openpyxl
-streamlit==0.76.0
+streamlit==1.23.0
 Pillow==8.1.0
 matplotlib==3.3.4
 xlrd == 1.2.0
