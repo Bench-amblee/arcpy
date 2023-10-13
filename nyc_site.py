@@ -146,7 +146,7 @@ def home_page(x,y):
       st.write('Select **NDVI Filter** to see the landcover classification')
   #ndvi graphs
   if y == 'NDVI Filter':
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     labels = 'Water','Buildings','Greenery'
     colors=['#01FFF8','#909494','#0EF716']
     with col1:
