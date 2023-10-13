@@ -137,7 +137,7 @@ def home_page(x,y):
     y_ = y
   #satellite
   if y == 'Satellite':
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
     with col1:
       z = st.select_slider('Year',options= [1975,1988, 1999, 2010, 2015, 2020])
       st.image(city_dict[x_][y_][z],use_column_width=True)
